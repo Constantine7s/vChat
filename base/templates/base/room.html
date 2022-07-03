@@ -1,5 +1,15 @@
 {% extends 'base/main.html' %}
+{% load static %}
 
 {% block content %}
-<h1>chat room</h1>
+<main>
+    <div id="room-name-wrapper">
+        <h1 id="room-name">Room Name: </h1>
+    </div>
+
+    <div id="streams"></div>
+
+</main>
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.12.1.js'%}"></script>
+<script type="text/javascript" src="{% static 'JavaScript/stream.js'%}"></script>
 {% endblock content %}
