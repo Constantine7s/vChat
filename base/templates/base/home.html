@@ -1,6 +1,12 @@
 {% extends 'base/main.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Home Screen</h1>
+<main>
+    <div id = "containter">
+        <img id="logo" src="{% static 'images/chat.png' %}">
+        <h1 id="title">vChat</h1>
+    </div>
+</main>
 {% endblock content %}
 

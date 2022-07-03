@@ -1,1 +1,25 @@
-body {background-color: turquoise;}
+body {background-color: rgb(201, 201, 201);}
+
+#logo{
+    display: block;
+    width: 90px;
+    margin: auto;
+}
+
+#containter{
+    display: block;
+    width: 400px;
+    border-radius: 10px;
+    border: 10px;
+    border-color: black;
+    padding: 50px;
+    background-color: white;
+    margin:auto
+
+}
+
+#title {
+    margin: auto;
+    font-size: 36px;
+    text-align: center;
+}
