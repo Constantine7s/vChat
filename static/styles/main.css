@@ -47,3 +47,27 @@ body {background-color: rgb(201, 201, 201);}
     height: 100%;
     width: 100%;
 }
+
+.icon {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    column-gap: 20px;
+}
+
+#btn-exit {
+    background-color: rgba(232, 58, 58, 0.827);
+}
+
