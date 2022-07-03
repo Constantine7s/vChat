@@ -6,7 +6,25 @@
     <div id = "containter">
         <img id="logo" src="{% static 'images/chat.png' %}">
         <h1 id="title">vChat</h1>
+        <form id="form">
+            <div class="field">
+                <input type="submit" value="Join Room" />
+            </div>
+
+        </form>
     </div>
 </main>
+
+<script type="text/javascript">
+    let form = document.getElementById('form');
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        window.open('/room/', '_self');
+    };
+    form.addEventListener('submit', handleSubmit);
+    
+</script>
+
 {% endblock content %}
 
