@@ -61,6 +61,28 @@ async function leaveStream() {
   window.open('/', '_self');
 }
 
+async function toggleCamera(e) {
+  if (localTracks[1].muted) {
+    await localTracks[1].setMuted(false);
+    e.target.style.backgroundColor = '#ffff';
+  } else {
+    await localTracks[1].setMuted(true);
+    e.target.style.backgroundColor = 'rgba(232, 58, 58, 1)';
+  }
+}
+
+async function toggleMic(e) {
+  if (localTracks[0].muted) {
+    await localTracks[0].setMuted(false);
+    e.target.style.backgroundColor = '#ffff';
+  } else {
+    await localTracks[0].setMuted(true);
+    e.target.style.backgroundColor = 'rgba(232, 58, 58, 1)';
+  }
+}
+
 displayStream();
 
-document.getElementById('btn-exit').addEventListener('click', leaveStream)
+document.getElementById('btn-exit').addEventListener('click', leaveStream);
+document.getElementById('btn-cam').addEventListener('click', toggleCamera);
+document.getElementById('btn-mic').addEventListener('click', toggleMic);
