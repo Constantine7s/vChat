@@ -7,7 +7,7 @@ const client = AgoraRTC.createClient({ mode: 'rtc', codec: 'vp8' });
 let localTracks = [];
 let remoteUsers = {};
 
-let displayLocalStream = async () => {
+async function displayStream() {
   client.on('user-published', userJoined);
   client.on('user-left', userLeft);
 
@@ -25,7 +25,7 @@ let displayLocalStream = async () => {
   localTracks[1].play(`user-${UID}`);
 
   await client.publish([localTracks[0], localTracks[1]]);
-};
+}
 
 async function userJoined(user, mediaType) {
   remoteUsers[user.uid] = user;
@@ -52,4 +52,15 @@ async function userLeft(user) {
   document.getElementById(`user-container-${user.uid}`).remove();
 }
 
-displayLocalStream();
+async function leaveStream() {
+  for (let i = 0; i < localTracks.length; i++) {
+    localTracks[i].stop();
+    localTracks[i].close();
+  }
+  await client.leave();
+  window.open('/', '_self');
+}
+
+displayStream();
+
+document.getElementById('btn-exit').addEventListener('click', leaveStream)
