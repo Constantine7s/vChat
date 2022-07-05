@@ -42,5 +42,15 @@ def getUser(request):
         uid=uid,
         room_name=room_name
     )
-    name = user.name
     return JsonResponse({'name': user.name},safe=False)
+
+@csrf_exempt
+def deleteUser(request):
+    data = json.loads(request.body)
+    user = RoomUser.objects.get(
+        name = data['name'],
+        uid = data['UID'],
+        room_name = data['room_name']
+    )
+    user.delete()
+    return JsonResponse('Successfully deleted user', safe=False)

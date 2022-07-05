@@ -65,6 +65,7 @@ async function leaveStream() {
     localTracks[i].close();
   }
   await client.leave();
+  deleteUser()
   window.open('/', '_self');
 }
 
@@ -107,7 +108,20 @@ async function getUser(user) {
   return member;
 }
 
+async function deleteUser() {
+  let response = await fetch('/deleteuser/', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({ name: NAME, room_name: CHANNEL, UID: UID }),
+  });
+  let user = await response.json();
+  return user;}
+
 displayStream();
+
+window.addEventListener('beforeunload', deleteUser)
 
 document.getElementById('btn-exit').addEventListener('click', leaveStream);
 document.getElementById('btn-cam').addEventListener('click', toggleCamera);
