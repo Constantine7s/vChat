@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from agora_token_builder import RtcTokenBuilder
 from django.http import JsonResponse
-import random, time
+from django.views.decorators.csrf import csrf_exempt
+from .models import RoomUser
+import random, time, json
 
 def getToken(request):
 
@@ -14,7 +16,7 @@ def getToken(request):
     currentTimeStamp = time.time()
     privilegeExpiredTs= currentTimeStamp + expirationTime
     token = RtcTokenBuilder.buildTokenWithUid(appId, appCertificate, channelName, uid, role, privilegeExpiredTs)
-    
+
     return JsonResponse({'token': token, 'uid': uid}, safe=False)
 
 def home(request):
@@ -22,3 +24,23 @@ def home(request):
 
 def room(request):
     return render(request, 'base/room.html')
+
+@csrf_exempt
+def createUser(request):
+    data = json.loads(request.body)
+    user, created = RoomUser.objects.get_or_create(
+        name = data['name'],
+        uid = data['UID'],
+        room_name = data['room_name']
+    )
+    return JsonResponse({'name': data['name']}, safe=False)
+
+def getUser(request):
+    uid = request.GET.get('UID') 
+    room_name = request.GET.get('room_name') 
+    user = RoomUser.objects.get(
+        uid=uid,
+        room_name=room_name
+    )
+    name = user.name
+    return JsonResponse({'name': user.name},safe=False)
