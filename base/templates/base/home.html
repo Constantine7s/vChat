@@ -7,13 +7,9 @@
         <img id="logo" src="{% static 'images/chat.png' %}">
         <h1 id="title">vChat</h1>
         <form id="form">
-            <div class="field">
-                <input type="text" name="room" placeholder="Enter a room name" style="text-transform:uppercase"/>
-            </div>
-            <div class="field">
-                <input type="submit" value="Join Room" />
-            </div>
-
+                <input type="text" name="room" class="field" placeholder="Enter a room name" style="text-transform:uppercase"/>
+                <input type="text" name="username" class="field" placeholder="Enter your name" style="text-transform:uppercase"/>
+                <input type="submit" class="submit" value="Join Room" />
         </form>
     </div>
 </main>

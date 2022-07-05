@@ -1,73 +1,90 @@
-body {background-color: rgb(201, 201, 201);}
-
-#logo{
-    display: block;
-    width: 90px;
-    margin: auto;
+body {
+  background-color: rgb(201, 201, 201);
 }
 
-#containter{
-    display: block;
-    width: 400px;
-    border-radius: 10px;
-    border: 10px;
-    border-color: black;
-    padding: 50px;
-    background-color: white;
-    margin:auto
+#logo {
+  display: block;
+  width: 90px;
+  margin: auto;
+}
 
+#containter {
+  display: block;
+  width: 400px;
+  border-radius: 10px;
+  border: 10px;
+  border-color: black;
+  padding: 50px;
+  background-color: white;
+  margin: auto;
 }
 
 #title {
-    margin: auto;
-    font-size: 36px;
-    text-align: center;
+  margin: auto;
+  font-size: 36px;
+  text-align: center;
 }
 
-.video-container{
-    border: 2px solid;
-    border-radius: 5px;
-    margin: 5px;
-    background-color: white;
-    flex-basis: 500px;
-    flex-grow: 1;
-    max-height: 100%;
-    min-height: 350px;
+.video-container {
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: white;
+  flex-basis: 500px;
+  flex-grow: 1;
+  max-height: 100%;
+  min-height: 350px;
 }
 
 #streams {
-    margin: 0 auto;
-    width: 75%;
-    height: 85vh;
-    display: flex;
-    flex-wrap: wrap;
+  margin: 0 auto;
+  width: 75%;
+  height: 85vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .video-player {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .icon {
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: white;
-    border-radius: 8px;
-    
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
 }
 
 .icon-wrapper {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    column-gap: 20px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  column-gap: 20px;
 }
 
 #btn-exit {
-    background-color: rgba(232, 58, 58, 1);
+  background-color: rgba(232, 58, 58, 1);
 }
+
+#title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+.field {
+  margin: 0 0 10px 0;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.submit {
+    width: 102%;
+    padding-bottom: 5px;
+  }
 
