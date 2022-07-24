@@ -7,8 +7,8 @@ import random, time, json
 
 def getToken(request):
 
-    appId = "YOUR APP ID"
-    appCertificate = "YOUR APP CERTIFICATE"
+    appId = "fe5bf1b0aaf1497c98483ba87e841c1b"
+    appCertificate = "35152207ce5044f4b3aa2676f7e08410"
     channelName = request.GET.get('channel')
     uid = random.randint(1,230)
     role = 1
